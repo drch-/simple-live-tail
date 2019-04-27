@@ -1,0 +1,19 @@
+version: '3'
+services:
+  api:
+    build: ./src
+    ports: 
+      - "9090:80"
+    volumes:
+        - ./logs:/logs
+  
+  frontail:
+    image: mthenw/frontail
+    ports:
+      - "9091:9001"
+    environment:
+        - FRONTAIL_USER
+        - FRONTAIL_PASS
+    command: "--disable-usage-stats  /logs/*.log -U ${FRONTAIL_USER} -P ${FRONTAIL_PASS}"
+    volumes:
+        - ./logs:/logs
