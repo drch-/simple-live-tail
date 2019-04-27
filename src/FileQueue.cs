@@ -58,7 +58,7 @@ namespace src
 
             foreach (var kvp in results)
             {
-                sb.Append(kvp.Key).Append("=").Append(kvp.Value).Append("\t");
+                sb.Append(kvp.Key).Append("=").Append(kvp.Value).Append("\n");
             }
             return sb.ToString();
         }
