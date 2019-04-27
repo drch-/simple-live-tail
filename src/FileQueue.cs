@@ -60,6 +60,7 @@ namespace src
             {
                 sb.Append(kvp.Key).Append("=").Append(kvp.Value).Append("\n");
             }
+            sb.Append("-----");
             return sb.ToString();
         }
         public void Add(string str)
